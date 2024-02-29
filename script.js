@@ -3,7 +3,6 @@ let reset=document.querySelector("#reset");
 let newgame=document.querySelector("#newgame");
 let msgcontainer=document.querySelector(".msgcontainer");
 let msg=document.querySelector("#msg");
-let hiden=document.querySelector(".hiden");
 
 let turnX=true;
 
@@ -55,7 +54,6 @@ const disboxes = ()=>{
 const showwinner =(winner)=> {
     msg.innerText=`winner is ${winner}`;
     msgcontainer.classList.remove("hide");
-    p.classList.remove("hide");
     disboxes();
 }
 
