@@ -34,12 +34,16 @@ body {
     border-radius: 50%;
     border: none;
     color: black;
+    font-weight: bold;
+    font-size: 5rem;
 }
 
 #reset {
     border-radius: 3px;
     border: none;
     margin: 2%;
+    font-weight: bold;
+    font-size: 3rem;
 }
 
 .hide {
@@ -48,4 +52,6 @@ body {
 
 #newgame {
     margin: 2%;
+    font-weight: bold;
+    font-size: 3rem;
 }
