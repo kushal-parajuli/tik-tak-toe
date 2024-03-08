@@ -94,7 +94,7 @@ const checkwinner = () => {
     }
 };
 
-
+//to reset or start newgame
 newgame.addEventListener("click",resetgame);
 reset.addEventListener("click",resetgame);
 
