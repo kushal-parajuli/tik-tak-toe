@@ -9,6 +9,21 @@ body {
     color: #fff;
 }
 
+nav {
+    background-color: azure;
+    width: 100%;
+    height: 50px;
+}
+
+.header {
+    color: #000500;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
 .container {
     height: 65vh;
     display: flex;

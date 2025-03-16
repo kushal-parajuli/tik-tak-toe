@@ -7,7 +7,7 @@ let turnX=true;
 let turn=document.querySelector(".turn");
 
 
-//for win pattern
+//Checking the winning pattern
 const winpattern = [
     [0,1,2],
     [0,3,6],
@@ -19,7 +19,21 @@ const winpattern = [
     [6,7,8],
 ];
 
-//for reseting game
+//To disable box
+const disboxes = ()=>{
+    for(let box of boxes){
+        box.disabled=true;
+    }
+  };
+//To enable box
+  const enbboxes = ()=>{
+    for(let box of boxes){
+        box.disabled=false;
+        box.innerText="";
+    }
+  };
+
+//Logic to reset game
 const resetgame = () =>{
     turnX=true;
     enbboxes();
@@ -28,7 +42,8 @@ const resetgame = () =>{
     turn.innerText="'X' player turn!"
     reset.classList.remove("hide");
 };
-//for showing X and O in box
+
+//For showing 'X' and 'O' in box
 boxes.forEach( (box)=>{
     box.addEventListener("click", ()=>{
         if(turnX){
@@ -44,28 +59,8 @@ boxes.forEach( (box)=>{
             checkwinner();
     });
 });
-//for disabled box
-const disboxes = ()=>{
-    for(let box of boxes){
-        box.disabled=true;
-    }
-  };
-//for enabled box
-  const enbboxes = ()=>{
-    for(let box of boxes){
-        box.disabled=false;
-        box.innerText="";
-    }
-  };
-//to show the winner
-const showwinner =(winner)=> {
-    msg.innerText=`winner is ${winner}`;
-    msgcontainer.classList.remove("hide");
-    turn.classList.add("hide");
-    reset.classList.add("hide");
-    disboxes();
-}
-//to show the winner or draw
+
+//Logic to show draw
 const checkwinner = () => {
     let filledBoxes = 0; 
     for (let pattern of winpattern) {
@@ -78,7 +73,7 @@ const checkwinner = () => {
             return; 
           }
         }
-    }//to check winner
+    }
     // Count filled boxes
     for (let box of boxes) {
         if (box.innerText !== "") {
@@ -94,7 +89,16 @@ const checkwinner = () => {
     }
 };
 
-//to reset or start newgame
+//To show the winner message
+const showwinner =(winner)=> {
+    msg.innerText=`winner is ${winner}`;
+    msgcontainer.classList.remove("hide");
+    turn.classList.add("hide");
+    reset.classList.add("hide");
+    disboxes();
+}
+
+//To reset or start newgame
 newgame.addEventListener("click",resetgame);
 reset.addEventListener("click",resetgame);
 
